@@ -9,6 +9,7 @@ const Brand = require('../../models/brand');
 const Category = require('../../models/category');
 const auth = require('../../middleware/auth');
 const role = require('../../middleware/role');
+// const logger = require('../../middleware/logger');
 const checkAuth = require('../../utils/auth');
 const { s3Upload } = require('../../utils/storage');
 const {
@@ -45,6 +46,7 @@ router.get('/item/:slug', async (req, res) => {
       product: productDoc
     });
   } catch (error) {
+    console.log(error);
     res.status(400).json({
       error: 'Your request could not be processed. Please try again.'
     });
@@ -71,6 +73,7 @@ router.get('/list/search/:name', async (req, res) => {
       products: productDoc
     });
   } catch (error) {
+    console.log(error);
     res.status(400).json({
       error: 'Your request could not be processed. Please try again.'
     });
@@ -140,7 +143,7 @@ router.get('/list', async (req, res) => {
       count
     });
   } catch (error) {
-    console.log('error', error);
+    console.log(error);
     res.status(400).json({
       error: 'Your request could not be processed. Please try again.'
     });
@@ -233,6 +236,7 @@ router.get('/list/brand/:slug', async (req, res) => {
       });
     }
   } catch (error) {
+    console.log(error);
     res.status(400).json({
       error: 'Your request could not be processed. Please try again.'
     });
@@ -247,6 +251,7 @@ router.get('/list/select', auth, async (req, res) => {
       products
     });
   } catch (error) {
+    console.log(error);
     res.status(400).json({
       error: 'Your request could not be processed. Please try again.'
     });
@@ -258,6 +263,7 @@ router.post(
   '/add',
   auth,
   role.check(ROLES.Admin, ROLES.Merchant),
+  // logger.log(),
   upload.single('image'),
   async (req, res) => {
     try {
@@ -318,6 +324,7 @@ router.post(
         product: savedProduct
       });
     } catch (error) {
+      console.log(error);
       return res.status(400).json({
         error: 'Your request could not be processed. Please try again.'
       });
@@ -364,6 +371,7 @@ router.get(
         products
       });
     } catch (error) {
+      console.log(error);
       res.status(400).json({
         error: 'Your request could not be processed. Please try again.'
       });
@@ -412,6 +420,7 @@ router.get(
         product: productDoc
       });
     } catch (error) {
+      console.log(error);
       res.status(400).json({
         error: 'Your request could not be processed. Please try again.'
       });
@@ -449,6 +458,7 @@ router.put(
         message: 'Product has been updated successfully!'
       });
     } catch (error) {
+      console.log(error);
       res.status(400).json({
         error: 'Your request could not be processed. Please try again.'
       });
@@ -475,6 +485,7 @@ router.put(
         message: 'Product has been updated successfully!'
       });
     } catch (error) {
+      console.log(error);
       res.status(400).json({
         error: 'Your request could not be processed. Please try again.'
       });
@@ -496,6 +507,7 @@ router.delete(
         product
       });
     } catch (error) {
+      console.log(error);
       res.status(400).json({
         error: 'Your request could not be processed. Please try again.'
       });
