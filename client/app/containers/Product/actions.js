@@ -247,6 +247,7 @@ export const addProduct = () => {
         price: 'required|numeric',
         taxable: 'required',
         image: 'required',
+        mapper: 'required',
         brand: 'required'
       };
 
@@ -263,6 +264,7 @@ export const addProduct = () => {
         price: product.price,
         quantity: product.quantity,
         image: product.image,
+        mapper: product.mapper,
         isActive: product.isActive,
         taxable: product.taxable.value,
         brand:
@@ -285,6 +287,7 @@ export const addProduct = () => {
         'required.price': 'Price is required.',
         'required.taxable': 'Taxable is required.',
         'required.image': 'Please upload files with jpg, jpeg, png format.',
+        'required.mapper': 'Mapper is required.',
         'required.brand': 'Brand is required.'
       });
 
@@ -341,7 +344,8 @@ export const updateProduct = () => {
         quantity: 'required|numeric',
         price: 'required|numeric',
         taxable: 'required',
-        brand: 'required'
+        brand: 'required',
+        mapper: 'required'
       };
 
       const product = getState().product.product;
@@ -356,7 +360,8 @@ export const updateProduct = () => {
         quantity: product.quantity,
         price: product.price,
         taxable: product.taxable,
-        brand: brand != 0 ? brand : null
+        brand: brand != 0 ? brand : null,
+        mapper: product.mapper
       };
 
       const { isValid, errors } = allFieldsValidation(newProduct, rules, {
@@ -373,7 +378,8 @@ export const updateProduct = () => {
         'required.quantity': 'Quantity is required.',
         'required.price': 'Price is required.',
         'required.taxable': 'Taxable is required.',
-        'required.brand': 'Brand is required.'
+        'required.brand': 'Brand is required.',
+        'required.mapper': 'Mapper is required.'
       });
 
       if (!isValid) {

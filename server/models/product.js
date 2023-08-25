@@ -24,6 +24,10 @@ const ProductSchema = new Schema({
     slug: 'name',
     unique: true
   },
+  mapper: {
+    type: String,
+    unique: false
+  },
   imageUrl: {
     type: String
   },

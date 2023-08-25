@@ -146,6 +146,19 @@ const AddProduct = props => {
               }}
             />
           </Col>
+          <Col xs='12' md='12'>
+            <Input
+              type={'textarea'}
+              error={formErrors['mapper']}
+              label={'Mapper'}
+              name={'mapper'}
+              placeholder={'Mapper'}
+              value={productFormData.mapper}
+              onInputChange={(name, value) => {
+                productChange(name, value);
+              }}
+            />
+          </Col>
           <Col xs='12' md='12' className='my-2'>
             <Switch
               id={'active-product'}

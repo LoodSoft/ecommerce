@@ -155,6 +155,19 @@ const EditProduct = props => {
               />
             </Col>
           )}
+          <Col xs='12' md='12'>
+            <Input
+              type={'textarea'}
+              error={formErrors['mapper']}
+              label={'Mapper'}
+              name={'mapper'}
+              placeholder={'Mapper'}
+              value={product.mapper}
+              onInputChange={(name, value) => {
+                productChange(name, value);
+              }}
+            />
+          </Col>
           <Col xs='12' md='12' className='mt-3 mb-2'>
             <Switch
               id={`enable-product-${product._id}`}
