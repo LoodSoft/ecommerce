@@ -1,7 +1,7 @@
 {
-  "name": "mern-ecommerce",
+  "name": "loodsoft-ecommerce",
   "version": "1.0.0",
-  "description": "MERN Ecommerce",
+  "description": "Loodsoft Ecommerce",
   "main": "server/index.js",
   "scripts": {
     "clean": "rimraf dist",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mohamedsamara/mern-ecommerce.git"
+    "url": "git+https://github.com/mohamedsamara/loodsoft-ecommerce.git"
   },
   "keywords": [
     "node",
@@ -30,9 +30,9 @@
   "author": "Mohamed Samara (https://github.com/mohamedsamara)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mohamedsamara/mern-ecommerce/issues"
+    "url": "https://github.com/mohamedsamara/loodsoft-ecommerce/issues"
   },
-  "homepage": "https://github.com/mohamedsamara/mern-ecommerce#readme",
+  "homepage": "https://github.com/mohamedsamara/loodsoft-ecommerce#readme",
   "dependencies": {
     "@fontsource/poppins": "^4.5.9",
     "autosuggest-highlight": "^3.1.1",
