@@ -149,11 +149,11 @@ const AddProduct = props => {
           <Col xs='12' md='12'>
             <Input
               type={'textarea'}
-              error={formErrors['mapper']}
-              label={'Mapper'}
-              name={'mapper'}
-              placeholder={'Mapper'}
-              value={productFormData.mapper}
+              error={formErrors['areas']}
+              label={'Image areas'}
+              name={'areas'}
+              placeholder={'Image areas'}
+              value={productFormData.areas}
               onInputChange={(name, value) => {
                 productChange(name, value);
               }}

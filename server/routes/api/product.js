@@ -275,7 +275,7 @@ router.post(
       const taxable = req.body.taxable;
       const isActive = req.body.isActive;
       const brand = req.body.brand;
-      const mapper = req.body.mapper;
+      const areas = req.body.areas;
       const image = req.file;
 
       if (!sku) {
@@ -313,7 +313,7 @@ router.post(
         taxable,
         isActive,
         brand,
-        mapper,
+        areas,
         imageUrl,
         imageKey
       });

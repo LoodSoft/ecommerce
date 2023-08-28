@@ -158,11 +158,11 @@ const EditProduct = props => {
           <Col xs='12' md='12'>
             <Input
               type={'textarea'}
-              error={formErrors['mapper']}
-              label={'Mapper'}
-              name={'mapper'}
-              placeholder={'Mapper'}
-              value={product.mapper}
+              error={formErrors['areas']}
+              label={'Image areas'}
+              name={'areas'}
+              placeholder={'Image areas'}
+              value={product.areas}
               onInputChange={(name, value) => {
                 productChange(name, value);
               }}

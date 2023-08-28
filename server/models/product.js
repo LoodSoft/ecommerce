@@ -24,7 +24,7 @@ const ProductSchema = new Schema({
     slug: 'name',
     unique: true
   },
-  mapper: {
+  areas: {
     type: String,
     unique: false
   },
