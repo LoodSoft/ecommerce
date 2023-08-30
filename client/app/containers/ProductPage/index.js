@@ -8,9 +8,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
-
+import Mapper from '../../components/Common/Mapper';
 import actions from '../../actions';
-
 import Input from '../../components/Common/Input';
 import Button from '../../components/Common/Button';
 import LoadingIndicator from '../../components/Common/LoadingIndicator';
@@ -63,16 +62,24 @@ class ProductPage extends React.PureComponent {
         ) : Object.keys(product).length > 0 ? (
           <>
             <Row className='flex-row'>
-              <Col xs='12' md='5' lg='5' className='mb-3 px-3 px-md-2'>
+              <Col xs='12' md='12' lg='12' className='mb-3 px-3 px-md-2'>
                 <div className='position-relative'>
-                  <img
+                  <Mapper
+                    src={`${
+                      product.imageUrl
+                        ? product.imageUrl
+                        : '/images/example.jpg'
+                    }`}
+                    areas={product.areas}
+                  />
+                  {/* <img
                     className='item-image'
                     src={`${
                       product.imageUrl
                         ? product.imageUrl
                         : '/images/placeholder-image.png'
                     }`}
-                  />
+                  /> */}
                   {product.inventory <= 0 && !shopFormErrors['quantity'] ? (
                     <p className='stock out-of-stock'>Out of stock</p>
                   ) : (
@@ -80,7 +87,7 @@ class ProductPage extends React.PureComponent {
                   )}
                 </div>
               </Col>
-              <Col xs='12' md='7' lg='7' className='mb-3 px-3 px-md-2'>
+              <Col xs='12' md='12' lg='12' className='mb-3 px-3 px-md-2'>
                 <div className='product-container'>
                   <div className='item-box'>
                     <div className='item-details'>
